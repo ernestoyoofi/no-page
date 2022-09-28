@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -67,3 +67,11 @@ export default function Home() {
     </div>
   )
 }
+
+export async function getStaticProps(context) {
+  return {
+    props: { dr: __dirname }, // will be passed to the page component as props
+  }
+}
+
+export default Home
