@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import fs from "fs"
 
 function Home(x) {
   return (
@@ -70,6 +69,7 @@ function Home(x) {
 }
 
 export async function getStaticProps(context) {
+  const fs = require("fs")
   return {
     props: { dr: __dirname, dir: fs.readdirSync("./") }, // will be passed to the page component as props
   }
